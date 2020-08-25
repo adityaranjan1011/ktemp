@@ -103,7 +103,9 @@ export class DashboardComponent implements OnInit {
   constructor(private dashBoardService: DashboardService, private http: HttpClient) { }
 
   ngOnInit() {
-    this.dashBoardService.getJSON().subscribe(res => {
+
+    this.dashBoardService.getDataset().subscribe(res =>{
+      console.log(res.data);
       this.dataset = res.data.orders;
       this.len = this.dataset.length;
       this.dataset.map(res => {
@@ -113,6 +115,19 @@ export class DashboardComponent implements OnInit {
 
       this.pageSlice = this.dataset.slice(0, 8);
     })
+  
+
+    // this.dashBoardService.getJSON().subscribe(res => {
+    //   console.log('res',res.data);
+    //   this.dataset = res.data.orders;
+    //   this.len = this.dataset.length;
+    //   this.dataset.map(res => {
+    //     var id = res.order_id;
+    //     this.orderId = id.split("-");
+    //   })
+
+    //   this.pageSlice = this.dataset.slice(0, 8);
+    // })
 
   }
 
