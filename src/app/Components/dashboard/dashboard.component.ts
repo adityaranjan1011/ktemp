@@ -105,7 +105,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
 
     this.dashBoardService.getDataset().subscribe(res =>{
-      console.log(res.data);
       this.dataset = res.data.orders;
       this.len = this.dataset.length;
       this.dataset.map(res => {
