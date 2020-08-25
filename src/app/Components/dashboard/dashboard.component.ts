@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
       plotOptions: {
         pie: {
           dataLabels: {
-            
+
             enabled: false,
             distance: -50,
             style: {
@@ -50,12 +50,12 @@ export class DashboardComponent implements OnInit {
       },
       series: [{
         type: 'pie',
-        labels: ['Mutual Fund','Smart Market','Gold'],
+        labels: ['Mutual Fund', 'Smart Market', 'Gold'],
         innerSize: '50%',
-        data: [10,20,30]
-      }   
+        data: [10, 20, 30]
+      }
       ],
-     
+
     };
 
 
@@ -104,7 +104,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    this.dashBoardService.getDataset().subscribe(res =>{
+    this.dashBoardService.getDataset().subscribe(res => {
       this.dataset = res.data.orders;
       this.len = this.dataset.length;
       this.dataset.map(res => {
@@ -114,19 +114,7 @@ export class DashboardComponent implements OnInit {
 
       this.pageSlice = this.dataset.slice(0, 8);
     })
-  
 
-    // this.dashBoardService.getJSON().subscribe(res => {
-    //   console.log('res',res.data);
-    //   this.dataset = res.data.orders;
-    //   this.len = this.dataset.length;
-    //   this.dataset.map(res => {
-    //     var id = res.order_id;
-    //     this.orderId = id.split("-");
-    //   })
-
-    //   this.pageSlice = this.dataset.slice(0, 8);
-    // })
 
   }
 
