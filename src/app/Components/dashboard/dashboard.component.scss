@@ -1,0 +1,197 @@
+.dashboard-page {
+    font-family: Poppins;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.05fr 1fr;
+    .side-nav {
+        padding: 10px;
+        padding-top: 30px;
+        // border: 1px solid;
+        width: 80px;
+    }
+    .main-content {
+        .main-header {
+            height: 80px;
+            padding: 20px 32px 0px 32px;
+            .title,
+            .expo {
+                color: #1766ff;
+                font-size: 2em;
+                font-family: inherit;
+                font-weight: 500;
+                width: 29px;
+                height: 29px;
+            }
+            .expo {
+                color: #ffffff;
+                font-size: inherit;
+                border-radius: 2.2px;
+                background-color: #301186;
+                position: relative;
+                right: 7px;
+            }
+        }
+        .temp-container {
+            background-color: #f4f6fc;
+            padding: 32px;
+            .dashboard-container {
+                height: 404px;
+                display: grid;
+                grid-template-columns: 1fr 0.25fr;
+                grid-column-gap: 32px;
+
+                .dataset {
+                    background-color: #ffffff;
+
+                    .dashboard {
+                        padding: 32px 24px;
+                        padding-bottom: 0px;
+                        height: 52px;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        letter-spacing: 1.21px;
+                        font-size: 13px;
+                        color: #8798ad;
+                        font-weight: 400;
+                        .head {
+                            padding: 20px;
+                        }
+                        .report {
+                            font-size: 15px;
+                            font-weight: 400;
+                            padding: 20px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-around;
+                        }
+                    }
+                    .data-report {
+                        display: grid;
+                        grid-template-rows: repeat(3, 1fr);
+                        padding-left: 24px;
+
+                        .data {
+                            padding-left: 20px;
+                            font-size: 15px;
+                            color: #8798ad;
+                            letter-spacing: 0;
+                            line-height: 22px;
+                        }
+                    }
+                    .data-chart {
+                        margin-top: 28px;
+                        height: 290px;
+                        display: grid;
+                        grid-template-columns: 0.25fr 1fr;
+                    }
+                    .dashboard-container-footer {
+                        height: 40px;
+                    }
+                }
+                .dashboard-user {
+                    padding: 20px;
+                    background-color: #ffffff;
+                    width: 312px;
+                    align-content: center;
+                }
+            }
+
+            .sharing-market {
+                margin-top: 24px;
+                height: 150px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 24px;
+
+                .mutual,
+                .deposit,
+                .gold {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    padding: 20px;
+                    box-shadow: 0.5px 0.5px 0.5px 0.5px #8798ad;
+                    background-color: #ffffff;
+                    .span-header {
+                        font-size: 13px;
+                        letter-spacing: 1.21;
+                        color: #8798ad;
+                    }
+                    .span-number {
+                        font-size: 48px;
+                        color: #2e384d;
+
+                        .lakh {
+                            margin-left: 10px;
+                            color: #2e384d;
+                            font-size: 28px;
+                            font-weight: 300;
+                        }
+                    }
+                    .increment {
+                        font-size: 16px;
+                        color: #2db744;
+                    }
+                }
+            }
+
+            .status {
+                // background-color: #ffffff;
+                // height: calc(100vh + 60px);
+                margin-top: 28px;
+
+                h1 {
+                    font-size: 13px !important;
+                    letter-spacing: 1.21;
+                    color: #8798ad;
+                    font-weight: 400;
+                }
+                .order-status {
+                    padding: 25px 0px;
+
+                    // height: 752px;
+                    .status-column {
+                        display: grid;
+                        grid-template-columns: repeat(6, 1fr);
+                        font-size: 12px;
+                        color: #8798ad;
+                        font-weight: 500;
+                        padding-left: 25px;
+                    }
+                    .status-details {
+                        margin-top: 10px;
+
+                        .details {
+                            border-radius: 1px;
+                            border: solid 1px rgba(46, 91, 255, 0.08);
+                            padding: 25px 38px;
+                            height: 75px;
+                            background-color: #ffffff;
+                            display: grid;
+                            grid-template-columns: repeat(6, 1fr);
+                            font-size: 15px;
+                            color: #2e384d;
+                            font-weight: 500;
+                            line-height: 5;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .paginator {
+            background-color: #f4f6fc;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .page-text {
+                padding-left: 30px;
+                font-size: 15px;
+                line-height: 22px;
+                color: #8798ad;
+            }
+        }
+    }
+}

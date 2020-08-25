@@ -1,0 +1,121 @@
+<div class="dashboard-page">
+  <div class="side-nav"></div>
+
+  <div class="main-content">
+    <div class="main-header">
+      <span class="title"
+        >Kosh
+        <span class="expo">e<sup>x</sup> </span>
+      </span>
+    </div>
+
+    <div class="temp-container">
+      <div class="dashboard-container">
+        <div class="dataset">
+          <div class="dashboard">
+            <div class="head"><span>DASHBOARD</span></div>
+            <div class="report">
+              <span>Daily</span>
+              <span>Weekly</span>
+              <span>Monthly</span>
+              <span>Yearly</span>
+            </div>
+          </div>
+          <div class="data-chart">
+            <div class="data-report">
+              <div class="data">
+                <span style="color:#2e384d;">&#x20b9; 2.83 Lakhs</span><br>
+                <span>Month Earnings</span>
+              </div>
+              <div class="data">
+                <span style="color:#2e384d;">234</span>
+                <span> <br>Month Sales</span>
+              </div>
+              <div style="padding-left: 20px; font-size: 15px;">
+                <button mat-raised-button  style="background-color: #2e5bff;color:#ffffff">
+                  Month Report
+                </button>
+              </div>
+            </div>
+            <highcharts-chart
+              [Highcharts]="highcharts"
+              [options]="chartOptions"
+              style="width: 100%; height: 280px; display: block; float: right;"
+            >
+            </highcharts-chart>
+          </div>
+        </div>
+        <div class="dashboard-user">
+          <highcharts-chart
+            class="chart"
+            [Highcharts]="highchartss"
+            [options]="userOptions"
+            style="width: 100%; height: 350px; display: inline-flex;"
+          >
+            <!-- <div><span></span></div> -->
+          </highcharts-chart>
+        </div>
+      </div>
+
+      <div class="sharing-market">
+        <div class="mutual">
+          <span class="span-header">MUTUAL FUNDs</span>
+          <span class="span-number">623<span class="lakh">Lakhs</span></span>
+          <span class="increment">
+            +2.4%
+          </span>
+        </div>
+        <div class="deposit">
+          <span class="span-header">SMART DEPOSITS</span>
+          <span class="span-number">158.3<span class="lakh">Lakhs</span></span>
+          <span class="increment">
+            +2.4%
+          </span>
+        </div>
+        <div class="gold">
+          <span class="span-header">GOLD</span>
+          <span class="span-number">158.3<span class="lakh">Lakhs</span></span>
+          <span class="increment">
+            +2.4%
+          </span>
+        </div>
+      </div>
+
+      <div class="status">
+        <h1>ORDER STATUS</h1>
+        <div class="order-status">
+          <div class="status-column">
+            <span>ORDER ID</span>
+            <span>SUBJECT</span>
+            <span>REQUETED DATE</span>
+            <span>LATEST UPDATE</span>
+            <span>STATUS</span>
+            <span></span>
+          </div>
+
+          <div class="status-details">
+            <div class="details" *ngFor="let dataOrder of pageSlice">
+              <span style="font-weight: 600;">#{{ orderId[0] }}</span>
+              <span>{{ dataOrder.sub }}</span>
+              <span>{{ dataOrder.requested_date }}</span>
+              <span>{{ dataOrder.latest_update }}</span>
+              <span>{{ dataOrder.status }}</span>
+              <span style="color: #2e5bff;">Open</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="paginator">
+        <span class="page-text" >Showing {{currentpage}} page of {{len}}</span>
+
+        <mat-paginator style="background-color: #f4f6fc;"
+          [length]="len"
+          [pageSize]="8"
+          [pageSizeOptions]="[8, 16, 24, 120]"
+          (page)="OnChangePage($event)"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>
