@@ -17,7 +17,7 @@ export class DashboardService {
    public getJSON(): Observable<any> {
     return this.http.get("./assets/data.json");
 }
-   getDataset(){
+   getDataset():Observable<any>{
      return this.http.get(`https://pf-stage.koshex.com/v1/GenerateStats/`);
    }
 }
